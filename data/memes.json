@@ -1,0 +1,99 @@
+{
+ "meta": {
+  "generated_at": "2026-10-28T02:54:14Z",
+  "latest_day": "2026-10-27",
+  "window_days": 7
+ },
+ "entries": [
+  {
+   "id": "2114289867488141345",
+   "username": "MandelDuck",
+   "author": "MandelDuck",
+   "created_at": "2026-10-25T09:36:00Z",
+   "url": "https://x.com/MandelDuck/status/2114289867488141345",
+   "text": "Bitcoin Seinfeld: Bitcoiners at the airport part 4\nAnybody else got those post conference blues? (or conference fatigue?) [video]",
+   "metrics": {
+    "impression_count": 101440,
+    "like_count": 495,
+    "repost_count": 56,
+    "reply_count": 21
+   },
+   "suggested_post": "Nobody warns you about the post-conference blues.\n\nThree days of Bitcoin talk, then you're at the gate with a lanyard and a bag of swag, and nobody around you wants to hear about self-custody.",
+   "image_alt": "Tired bitcoiner at an airport gate with conference swag",
+   "image": "images/2026-10-27-1.jpg",
+   "added": "2026-10-27"
+  },
+  {
+   "id": "2112857602564542754",
+   "username": "MandelDuck",
+   "author": "MandelDuck",
+   "created_at": "2026-10-21T10:44:00Z",
+   "url": "https://x.com/MandelDuck/status/2112857602564542754",
+   "text": "Bitcoin Seinfeld: Bitcoiners at the Airport part 3\n\nThis one actually happened to me, and a few others have said similar stories, have you noticed it? [video]",
+   "metrics": {
+    "impression_count": 79387,
+    "like_count": 490,
+    "repost_count": 49,
+    "reply_count": 23
+   },
+   "suggested_post": "Airports are where you spot other bitcoiners.\n\nOne look at the orange shirt and you both just nod.\n\nEveryone else in the security line is confused.",
+   "image_alt": "Two travelers in Bitcoin shirts nodding at each other in a security line",
+   "image": "images/2026-10-27-2.jpg",
+   "added": "2026-10-27"
+  },
+  {
+   "id": "2115064836258222338",
+   "username": "MandelDuck",
+   "author": "MandelDuck",
+   "created_at": "2026-10-27T12:55:00Z",
+   "url": "https://x.com/MandelDuck/status/2115064836258222338",
+   "text": "David Attenborough: Bitcoiners in the wild\n\nIn this film, we follow one of the most fascinating and least understood species on planet Earth… the Bitcoiner [video]",
+   "metrics": {
+    "impression_count": 66744,
+    "like_count": 999,
+    "repost_count": 235,
+    "reply_count": 67
+   },
+   "suggested_post": "Nature documentary idea: the Bitcoiner.\n\nRarely seen in daylight. Checks the chart from the bushes. Gets nervous when someone says \"crypto.\"",
+   "image_alt": "Bitcoiner hiding in a bush checking a chart, watched through binoculars",
+   "image": "images/2026-10-27-3.jpg",
+   "added": "2026-10-27"
+  },
+  {
+   "id": "2114455702102286646",
+   "username": "sunxliao",
+   "author": "sunxliao",
+   "created_at": "2026-10-25T20:34:00Z",
+   "url": "https://x.com/sunxliao/status/2114455702102286646",
+   "text": "2014: Massive Bear Market (Buy)\n2015: Relax\n2016: Relax\n2017: Sell and Buy Porsche\n2018: Massive Bear Market (Buy)\n2019: Relax\n2020: Relax\n2021: Sell and Buy Porsche\n2022: Massive Bear Market (Buy)\n2023: …",
+   "metrics": {
+    "impression_count": 57110,
+    "like_count": 541,
+    "repost_count": 40,
+    "reply_count": 24
+   },
+   "suggested_post": "The Bitcoin playbook, as a meme:\n\nBear market: buy\nNext year: relax\nYear after: relax\nThen: sell and buy a Porsche\n\nSimple on paper. Hard in real life.",
+   "image_alt": "Four panels: buy in the rain, relax, relax, drive a sports car",
+   "image": "images/2026-10-27-4.jpg",
+   "added": "2026-10-27"
+  },
+  {
+   "id": "2114155260742652123",
+   "username": "Prinz_Land",
+   "author": "Prinz_Land",
+   "created_at": "2026-10-25T00:41:07Z",
+   "url": "https://x.com/Prinz_Land/status/2114155260742652123",
+   "text": "Advice to #Bitcoin Leverage Traders:\n\nTrade only $BTC and do your analysis very well before entering a trade. Set your SL at -20% to -30%.\n\nWhen you hit SL, try again. When you hit another SL, try again. When you blow your account, deposit again. …",
+   "metrics": {
+    "impression_count": 3102,
+    "like_count": 54,
+    "repost_count": 2,
+    "reply_count": 5
+   },
+   "suggested_post": "Leverage trading plan:\n\nHit your stop loss. Try again.\nHit it again. Try again.\nBlow the account. Deposit again.\n\nOr just buy spot and go to sleep.",
+   "image_alt": "Trader pressing a Deposit Again button in front of a falling chart",
+   "image": "images/2026-10-27-5.jpg",
+   "added": "2026-10-27"
+  }
+ ]
+}
