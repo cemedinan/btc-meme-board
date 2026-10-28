@@ -14,6 +14,17 @@ No source posts, handles, links or metrics are stored or shown.
 - Posting suggestion shown on page: best window 9:00-11:00 Chile time weekdays; weekends late morning.
 - Window: `WINDOW_DAYS = 7` at top of update.py.
 
+## 0b. Post rules
+- `cta`: every entry. Soft, natural, max 1 line, 1-2 options, prioritise save/bookmark, repost or follow,
+  English, user's direct voice. Vary daily; no emoji spam, no "follow me!!".
+- Engagement: post/alt should invite interaction where natural (closing question, a take people reply to).
+- Scannable: short lines, blank line between setup / punchline / question.
+- Best window: 9:00-11:00 Chile time weekdays (weekends late morning).
+- `visual_suggestion` {type: "static meme"|"short video 9:16"|"none", description, style_note, handoff}
+  ONLY when it adds value. style_note: deep navy bg, Bitcoin in white, lime accents, exact logo watermark.
+  Video ideas get handoff "hand off to Spielberg" (label only; another assistant makes videos).
+- Nothing auto-posts: everything is a draft for the user's review.
+
 ## 1. Find the news hook (5 min)
 - X: `search_news` (query "bitcoin", max_age_hours 36) and `search_posts_all` for what people are joking about.
 - Web: WebSearch "bitcoin news <today>".
@@ -58,7 +69,8 @@ Never copy anyone's joke verbatim. Each item: `suggested_post` + a different `su
 ```json
 {"id":"YYYY-MM-DD-j1","type":"JOKE|MEME","format":"Drake Hotline Bling","timeliness":"EVERGREEN|CURRENT",
  "hook":"one line, verified fact + source (CURRENT only, else \"\")",
- "suggested_post":"...","suggested_alt":"...","virality":"high|medium|light","why_shareable":"one line","image_src":"/abs/path.jpg","image_alt":"..."}
+ "suggested_post":"...","suggested_alt":"...","virality":"high|medium|light","why_shareable":"one line","cta":"one line",
+ "visual_suggestion":{"type":"short video 9:16","description":"...","style_note":"...","handoff":"hand off to Spielberg"},"image_src":"/abs/path.jpg","image_alt":"..."}
 ```
 ids: j1, j2, m1, m2, m3.
 

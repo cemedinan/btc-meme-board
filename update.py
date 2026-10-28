@@ -4,7 +4,7 @@ Usage: python3 update.py [incoming.json] [--no-push]
 Optional: --day=YYYY-MM-DD to override the Santiago date label.
 incoming.json: list of 5 original entries (see UPDATE.md). Each needs id (e.g. 2026-10-28-j1),
 type (JOKE|MEME), format, timeliness (EVERGREEN|CURRENT), hook (one line, CURRENT only),
-suggested_post, suggested_alt, virality (high|medium|light), why_shareable (one line), image_src (path to the rendered image on the box), image_alt.
+suggested_post, suggested_alt, virality (high|medium|light), why_shareable (one line), cta (1 line), optional visual_suggestion {type, description, style_note, handoff}, image_src (path to the rendered image on the box), image_alt.
 Merges (skipping ids already present), compresses images to images/YYYY-MM-DD-N.jpg,
 prunes posts older than 7 days (and their images), stamps meta, commits and pushes."""
 import json, sys, os, subprocess, datetime as dt
