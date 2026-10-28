@@ -13,10 +13,6 @@ def fit(d,t,maxw,start):
         if d.textlength(t,font=f)<=maxw: return f
         s-=4
     return ImageFont.truetype(F,s)
-def chev(d,x,y,w):
-    for i,c in enumerate((LIME,WHITE)):
-        yy=y+i*w*0.45
-        d.line([(x,yy+w*0.4),(x+w/2,yy),(x+w,yy+w*0.4)],fill=c,width=int(w*0.16),joint='curve')
 def motif(d,m):
     cx,cy=540,400
     if m=='binoculars':
@@ -47,6 +43,6 @@ def main(out,l1,l2,m='none'):
     d.text((540,760),l1,font=f1,fill=WHITE,anchor='mm')
     bb=d.textbbox((540,870),l2,font=f2,anchor='mm'); d.rectangle([bb[0]-18,bb[1]-14,bb[2]+18,bb[3]+14],fill=LIME)
     d.text((540,870),l2,font=f2,fill=NAVY,anchor='mm')
-    chev(d,960,70,56)
+    import sys as _s,os as _o; _s.path.insert(0,_o.path.dirname(_o.path.abspath(__file__))); import watermark; im=watermark.apply(im)
     im.save(out,'JPEG',quality=88)
 if __name__=='__main__': main(*sys.argv[1:])

@@ -28,11 +28,20 @@ or Know Your Meme / Wikimedia). If no download works, recreate the format with G
 World's best stand-up: sharp, dry, sarcastic, tight setup → punchline, few words, English.
 Never copy anyone's joke verbatim. Each item: `suggested_post` + a different `suggested_alt`.
 
-## 5. Art direction
+## 5. Logo / watermark (RULE)
+- NEVER recreate, redraw, recolor, stretch or crop the logo. The only source is
+  `assets/logo-original.jpg`; `assets/logo-watermark.png` is its transparent cut-out (made once by
+  `make_watermark.py`: alpha from distance to the navy bg, un-premultiplied colours, diff-checked).
+- Every image gets it via `watermark.apply()` (already called by render_joke.py, render_meme.py,
+  render_card.py; for any other image run `python3 watermark.py in.jpg out.jpg`):
+  bottom-right, margin 4% of width, width 9.5% of width, opacity 70%, plus a subtle navy rounded plate
+  automatically when the area behind is busy/bright. Keep captions out of the bottom-right corner.
+
+## 5b. Art direction
 - Jokes: `python3 render_joke.py out.jpg "SETUP" "PUNCHLINE"` — navy #0B0B2B, white #F2F2F5 setup,
-  big lime #C5E523 punchline, chevron. Flat, minimal, nothing else.
+  big lime #C5E523 punchline, logo watermark. Flat, minimal, nothing else.
 - Memes: NOT minimal. `python3 render_meme.py band tpl.jpg out.jpg "TOP" ["BOTTOM"]` (caption band)
-  or `python3 render_meme.py drake tpl.jpg out.jpg "NO" "YES"`. Output is framed in navy with chevron.
+  or `python3 render_meme.py drake tpl.jpg out.jpg "NO" "YES"`. Output is framed in navy with the logo watermark.
 
 ## 6. Entry format (incoming.json, list of 5)
 ```json
