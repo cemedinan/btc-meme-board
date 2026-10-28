@@ -29,3 +29,8 @@ It: compresses images to `images/YYYY-MM-DD-N.jpg` (Santiago date), adds entries
 
 ## 5. Verify
 `curl -s -o /dev/null -w '%{http_code}' https://cemedinan.github.io/btc-meme-board/data/memes.json` → 200 (Pages rebuild takes ~1 min).
+
+## Rule: suggested posts
+- Never rely on video (or image) contents you cannot see. Use only what is in the post's text/title.
+- For video posts, write an independent, original, text-only Bitcoin joke on the same theme that stands on its own and makes no claim about what the video shows.
+- Never add details, numbers or facts that are not in the source.
