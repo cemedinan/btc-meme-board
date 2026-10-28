@@ -1,114 +1,74 @@
 {
  "meta": {
-  "generated_at": "2026-10-28T03:12:29Z",
+  "generated_at": "2026-10-28T03:23:54Z",
   "latest_day": "2026-10-28",
   "window_days": 7
  },
  "entries": [
   {
-   "id": "2115064836258222338",
-   "username": "MandelDuck",
-   "author": "MandelDuck",
-   "created_at": "2026-10-27T12:55:00Z",
-   "url": "https://x.com/MandelDuck/status/2115064836258222338",
-   "text": "David Attenborough: Bitcoiners in the wild\n\nIn this film, we follow one of the most fascinating and least understood species on planet Earth… the Bitcoiner [video]",
-   "metrics": {
-    "impression_count": 66744,
-    "like_count": 999,
-    "repost_count": 235,
-    "reply_count": 67
-   },
-   "suggested_post": "The Bitcoiner is the only species that hibernates through the bear market and still checks the price every hour.",
-   "image_alt": "Rare species: the Bitcoiner, seen through binoculars",
-   "suggested_alt": "Scientists finally observed a Bitcoiner in the wild.\n\nIt approached slowly, made eye contact, and asked if they'd heard of self-custody.",
-   "laugh_replies": 10,
-   "laugh_note": "seen",
+   "id": "2026-10-28-j1",
+   "type": "JOKE",
+   "format": "brand card",
+   "timeliness": "CURRENT",
+   "hook": "Google Trends: 'bitcoin' search interest at a five-year low (X News, Oct 27)",
+   "suggested_post": "Google searches for Bitcoin just hit a five-year low.\n\nSo it's not just my family.",
+   "suggested_alt": "Bitcoin search interest is at a five-year low.\n\nFinally, the whole internet reacts to Bitcoin the way my group chat does.",
+   "image_alt": "Navy card: Bitcoin Google searches just hit a five-year low. So it's not just my family.",
    "image": "images/2026-10-28-1.jpg",
-   "added": "2026-10-28"
+   "added": "2026-10-28",
+   "created_at": "2026-10-28T03:23:54Z"
   },
   {
-   "id": "2112857602564542754",
-   "username": "MandelDuck",
-   "author": "MandelDuck",
-   "created_at": "2026-10-21T10:44:00Z",
-   "url": "https://x.com/MandelDuck/status/2112857602564542754",
-   "text": "Bitcoin Seinfeld: Bitcoiners at the Airport part 3\n\nThis one actually happened to me, and a few others have said similar stories, have you noticed it? [video]",
-   "metrics": {
-    "impression_count": 79387,
-    "like_count": 490,
-    "repost_count": 49,
-    "reply_count": 23
-   },
-   "suggested_post": "Airport security asked if I had anything to declare.\n\nI said 21 million is a hard cap.\n\nI'm writing this from a small room.",
-   "image_alt": "Anything to declare? 21M. Hard cap.",
-   "suggested_alt": "Spotting another Bitcoiner at the airport is like meeting someone from your hometown.\n\nExcept your hometown is a group chat that won't stop yelling.",
-   "laugh_replies": 5,
-   "laugh_note": "seen",
+   "id": "2026-10-28-j2",
+   "type": "JOKE",
+   "format": "brand card",
+   "timeliness": "EVERGREEN",
+   "hook": "",
+   "suggested_post": "Self-custody means nobody can touch my seed phrase.\n\nIt's on a sticky note. On the router.",
+   "suggested_alt": "Not your keys, not your coins.\n\nMy keys, also not my coins. I laminated the Wi-Fi password.",
+   "image_alt": "Navy card: Self-custody: nobody can touch my seed phrase. It's on a sticky note. On the router.",
    "image": "images/2026-10-28-2.jpg",
-   "added": "2026-10-28"
+   "added": "2026-10-28",
+   "created_at": "2026-10-28T03:23:54Z"
   },
   {
-   "id": "2114289867488141345",
-   "username": "MandelDuck",
-   "author": "MandelDuck",
-   "created_at": "2026-10-25T09:36:00Z",
-   "url": "https://x.com/MandelDuck/status/2114289867488141345",
-   "text": "Bitcoin Seinfeld: Bitcoiners at the airport part 4\nAnybody else got those post conference blues? (or conference fatigue?) [video]",
-   "metrics": {
-    "impression_count": 101440,
-    "like_count": 495,
-    "repost_count": 56,
-    "reply_count": 21
-   },
-   "suggested_post": "Post-conference blues is going from a room where everyone agrees with you to a dinner table where you're the cautionary tale.",
-   "image_alt": "Conference over. Back to normies.",
-   "suggested_alt": "Worst part of a Bitcoin conference is flying home and remembering normal people think \"self-custody\" is a parenting term.",
-   "laugh_replies": 4,
-   "laugh_note": "seen",
+   "id": "2026-10-28-m1",
+   "type": "MEME",
+   "format": "Drake Hotline Bling",
+   "timeliness": "CURRENT",
+   "hook": "Fed FOMC rate decision is today, Oct 28",
+   "suggested_post": "Fed day.\n\nI will not be reading the statement. I will be watching a 1-minute candle have a nervous breakdown.",
+   "suggested_alt": "FOMC day: 400 words from the Fed, 4,000 candles from me.",
+   "image_alt": "Drake meme: rejects reading the Fed's rate decision, approves watching the 1-minute Bitcoin chart have a panic attack about it",
    "image": "images/2026-10-28-3.jpg",
-   "added": "2026-10-28"
+   "added": "2026-10-28",
+   "created_at": "2026-10-28T03:23:54Z"
   },
   {
-   "id": "2114381469573366148",
-   "username": "pete_rizzo_",
-   "author": "pete_rizzo_",
-   "created_at": "2026-10-25T15:40:00Z",
-   "url": "https://x.com/pete_rizzo_/status/2114381469573366148",
-   "text": "13 YEARS OF \"EXPERTS\" SAYING #BITCOIN IS GOING TO $0\n\nTHEY NEVER LEARN 🤣 [video]",
-   "metrics": {
-    "impression_count": 16313,
-    "like_count": 286,
-    "repost_count": 58,
-    "reply_count": 29
-   },
-   "suggested_post": "Experts have called Bitcoin going to zero for 13 years.\n\nAt this point it's not a prediction. It's a holiday tradition.",
-   "suggested_alt": "Bitcoin has died so many times it should be a horror franchise.\n\nEvery sequel, same ending. The experts never survive.",
-   "image_alt": "Declared dead again. Still here.",
-   "laugh_replies": 2,
-   "laugh_note": "seen",
+   "id": "2026-10-28-m2",
+   "type": "MEME",
+   "format": "This Is Fine (dog in burning room)",
+   "timeliness": "EVERGREEN",
+   "hook": "",
+   "suggested_post": "Leverage is great. You get to experience a whole bear market in four minutes.",
+   "suggested_alt": "50x long. Room's on fire. Coffee's still warm. We're fine.",
+   "image_alt": "This is fine dog: Me, 4 minutes into my 50x long",
    "image": "images/2026-10-28-4.jpg",
-   "added": "2026-10-28"
+   "added": "2026-10-28",
+   "created_at": "2026-10-28T03:23:54Z"
   },
   {
-   "id": "2114155260742652123",
-   "username": "Prinz_Land",
-   "author": "Prinz_Land",
-   "created_at": "2026-10-25T00:41:07Z",
-   "url": "https://x.com/Prinz_Land/status/2114155260742652123",
-   "text": "Advice to #Bitcoin Leverage Traders:\n\nTrade only $BTC and do your analysis very well before entering a trade. Set your SL at -20% to -30%.\n\nWhen you hit SL, try again. When you hit another SL, try again. When you blow your account, deposit again. …",
-   "metrics": {
-    "impression_count": 3102,
-    "like_count": 54,
-    "repost_count": 2,
-    "reply_count": 5
-   },
-   "suggested_post": "My leverage strategy has three steps:\n\nOpen position. Hit stop loss. Deposit again.\n\nMy exchange calls me a loyal customer.",
-   "image_alt": "Stop loss. Deposit. Repeat.",
-   "suggested_alt": "Leverage traders don't have a strategy.\n\nThey have a subscription. Monthly deposit. Cancel anytime. Never do.",
-   "laugh_replies": 2,
-   "laugh_note": "seen",
+   "id": "2026-10-28-m3",
+   "type": "MEME",
+   "format": "Waiting Skeleton (spooky-season trend)",
+   "timeliness": "CURRENT",
+   "hook": "Halloween week; spooky-season formats trending (TikTok trend reports, Oct 2026)",
+   "suggested_post": "Halloween costume this year: guy who was promised a post-halving bull run.\n\nNo makeup needed. Just waited.",
+   "suggested_alt": "Still waiting on the halving pump. At this point I'm not HODLing, I'm decomposing.",
+   "image_alt": "Waiting skeleton on a bench: Me waiting for the bull run I was promised last halving",
    "image": "images/2026-10-28-5.jpg",
-   "added": "2026-10-28"
+   "added": "2026-10-28",
+   "created_at": "2026-10-28T03:23:54Z"
   }
  ]
 }

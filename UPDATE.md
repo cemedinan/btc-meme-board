@@ -1,47 +1,54 @@
-# Daily update procedure
+# Daily update — BTC Meme Board (original content)
 
-Live: https://cemedinan.github.io/btc-meme-board/ · Repo: https://github.com/cemedinan/btc-meme-board (Pages: legacy, branch `main`, path `/`).
-The page (`index.html`) is static and renders `data/memes.json` client-side, same layout as `x-virality-board`, restyled navy/white/lime. Do not edit HTML for daily updates.
+Every day: **2 JOKES + 3 MEMES**, all original, for @ForecastQuant (English). Nothing is posted to X.
+No source posts, handles, links or metrics are stored or shown.
 
-## 1. Find candidates and check 😂 replies (agent step)
-- Search candidates with `x` → `search_posts_all` (`start_time` = now − 7 days, `post.fields=public_metrics,created_at`, `expansions=author_id`, `user.fields=username`, `sort_order=relevancy`). Good sources: Bitcoin comedy accounts (`from:MandelDuck OR from:pete_rizzo_ OR from:CryptoWendyO OR from:sunxliao ...`), humor keywords (`(bitcoin OR btc) (meme OR lol OR 😂) lang:en -is:retweet -is:reply`).
-- Keep only real humor/memes about Bitcoin in English (no news, shilling, giveaways, token promos).
-- **Qualifying rule:** the post must have at least one reply containing 😂. Check with one batched search:
-  `(conversation_id:ID1 OR conversation_id:ID2 ...) 😂 is:reply`, `post.fields=referenced_tweets`, follow `next_token`.
-  Count replies whose text has 😂 and whose `referenced_tweets[replied_to].id` is the candidate (`conversation_id` is not returned, so this counts direct replies only).
-- Rank by 😂 replies seen, then impressions. Take the top 5; if fewer than 5 qualify, publish only those and say so in the report.
-- Store `laugh_replies` (int) and `laugh_note: "seen"` (it is a sample count from search).
+## 1. Find the news hook (5 min)
+- X: `search_news` (query "bitcoin", max_age_hours 36) and `search_posts_all` for what people are joking about.
+- Web: WebSearch "bitcoin news <today>".
+- Use ONLY facts you verified this run (e.g. "Fed decision today", "searches at 5-year low").
+  No invented numbers, no price predictions, no financial advice, nothing defamatory about real people
+  (prefer not naming people at all).
+- Mix: at least 1-2 items CURRENT (with hook), rest EVERGREEN (HODL, bear market, checking the price,
+  self-custody, leverage pain, orange-pilling family, number go up, halving, 21 million).
 
-## 2. Suggested posts: comedian voice, 2 versions
-Write as the best stand-up comedian in the world, for a Bitcoin audience, in English:
-premise → twist → kicker. Sharp, sarcastic, original, few words. Same joke territory as the source, but clearly better wording; never copy verbatim.
-No invented facts, no claims about video/image contents you cannot see (for video posts write an independent joke on the theme), no hashtag spam, no motivational fluff, no price predictions or financial advice, no real people's likenesses.
-Provide `suggested_post` (primary) and `suggested_alt` (alternative); each gets its own copy button.
+## 2. Pick meme formats
+- Famous, overused formats: Drake, This Is Fine, Waiting Skeleton, Two Buttons, Expanding Brain,
+  Distracted Boyfriend, Change My Mind, Always Has Been, Gigachad, Wojak/NPC, Bernie...
+- At least ONE trending now (WebSearch "trending meme format <month year>", X search "meme format").
+  Many trends are video-only; then pick the closest still format and say so in `format`.
+- Never Pepe or anything tied to hate/extremist symbols. Don't repeat a format used in the last 7 days.
 
-## 3. Images: navy / white / lime art direction
-Square 1080×1080 JPG. Deep navy background #0B0B2B, accents only white #F2F2F5 and lime #C5E523 plus navy tints (#1C1C48, #303064). Flat, minimal, bold geometric/editorial, lots of negative space, high contrast. Short punchline: white line + lime highlight line. Small chevron-up mark (lime over white) top right. No multicolor, no gradients, no photoreal people.
-Preferred (exact control): `python3 render_card.py out.jpg "WHITE LINE" "LIME LINE" <motif>` (motifs: binoculars, plane, ticket, tombstone, loop, none; add new motifs in the script as needed). If using GenerateImage instead, spell out this palette strictly and Read every image; regenerate any that stray.
+## 3. Download templates
+`curl -sL -A Mozilla/5.0 -o t.jpg https://i.imgflip.com/<id>.jpg` (ids listed in render_meme.py docstring;
+or Know Your Meme / Wikimedia). If no download works, recreate the format with GenerateImage
+(no real people's likenesses).
 
-## 3b. Incoming JSON
-Create e.g. `/workspace/btc-incoming/YYYY-MM-DD.json` — a list of objects:
+## 4. Voice brief
+World's best stand-up: sharp, dry, sarcastic, tight setup → punchline, few words, English.
+Never copy anyone's joke verbatim. Each item: `suggested_post` + a different `suggested_alt`.
+
+## 5. Art direction
+- Jokes: `python3 render_joke.py out.jpg "SETUP" "PUNCHLINE"` — navy #0B0B2B, white #F2F2F5 setup,
+  big lime #C5E523 punchline, chevron. Flat, minimal, nothing else.
+- Memes: NOT minimal. `python3 render_meme.py band tpl.jpg out.jpg "TOP" ["BOTTOM"]` (caption band)
+  or `python3 render_meme.py drake tpl.jpg out.jpg "NO" "YES"`. Output is framed in navy with chevron.
+
+## 6. Entry format (incoming.json, list of 5)
 ```json
-{"id":"…","username":"handle","author":"handle","created_at":"2026-10-25T09:36:00Z",
- "url":"https://x.com/handle/status/…","text":"joke text","metrics":{"impression_count":0,"like_count":0,"repost_count":0,"reply_count":0},
- "laugh_replies":3,"laugh_note":"seen",
- "suggested_post":"primary","suggested_alt":"alternative",
- "image_src":"/path/to/card.jpg","image_alt":"short description"}
+{"id":"YYYY-MM-DD-j1","type":"JOKE|MEME","format":"Drake Hotline Bling","timeliness":"EVERGREEN|CURRENT",
+ "hook":"one line, verified fact + source (CURRENT only, else \"\")",
+ "suggested_post":"...","suggested_alt":"...","image_src":"/abs/path.jpg","image_alt":"..."}
 ```
+ids: j1, j2, m1, m2, m3.
 
-## 4. Run the script
-```
-cd /workspace/btc-meme-board && git pull && python3 update.py /workspace/btc-incoming/YYYY-MM-DD.json
-```
-It: compresses images to `images/YYYY-MM-DD-N.jpg` (Santiago date), adds entries with `added`=today, removes entries whose post `created_at` is older than 7 days and deletes their images, sorts, updates `meta`, then `git commit` + `git push`. Add `--no-push` to test locally. Running with no file just prunes and pushes.
+## 7. Run
+`python3 update.py incoming.json` (add `--no-push` to test, `--day=YYYY-MM-DD` to override).
+It compresses images to images/DATE-N.jpg, stamps added/created_at, prunes entries >7 days old with
+their images, writes data/memes.json, commits and pushes.
 
-## 5. Verify
-`curl -s -o /dev/null -w '%{http_code}' https://cemedinan.github.io/btc-meme-board/data/memes.json` → 200 (Pages rebuild takes ~1 min).
-
-## Rule: suggested posts
-- Never rely on video (or image) contents you cannot see. Use only what is in the post's text/title.
-- For video posts, write an independent, original, text-only Bitcoin joke on the same theme that stands on its own and makes no claim about what the video shows.
-- Never add details, numbers or facts that are not in the source.
+## 8. Verify
+- Read every image (contact sheet) before running; fix unreadable captions, typos, cropped text.
+- After push (~1 min): HTTP 200 for https://cemedinan.github.io/btc-meme-board/, data/memes.json, every image.
+- `google-chrome --headless --no-sandbox --window-size=900,2400 --virtual-time-budget=8000 --screenshot=shot.png URL`
+  and look at it.
