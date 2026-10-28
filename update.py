@@ -4,10 +4,11 @@ Usage: python3 update.py [incoming.json] [--no-push]
 Optional: --day=YYYY-MM-DD to override the Santiago date label.
 incoming.json: list of 5 original entries (see UPDATE.md). Each needs id (e.g. 2026-10-28-j1),
 type (JOKE|MEME), format, timeliness (EVERGREEN|CURRENT), hook (one line, CURRENT only),
-suggested_post, suggested_alt, image_src (path to the rendered image on the box), image_alt.
+suggested_post, suggested_alt, virality (high|medium|light), why_shareable (one line), image_src (path to the rendered image on the box), image_alt.
 Merges (skipping ids already present), compresses images to images/YYYY-MM-DD-N.jpg,
 prunes posts older than 7 days (and their images), stamps meta, commits and pushes."""
 import json, sys, os, subprocess, datetime as dt
+WINDOW_DAYS = 7  # pruning window (user asked 5-7)
 from PIL import Image
 R = os.path.dirname(os.path.abspath(__file__)); DATA = os.path.join(R, 'data', 'memes.json')
 now = dt.datetime.now(dt.timezone.utc)
@@ -30,16 +31,17 @@ if args:
         im = Image.open(e.pop('image_src')).convert('RGB'); im.thumbnail((1200, 1200))
         im.save(os.path.join(R, rel), 'JPEG', quality=82, optimize=True, progressive=True)
         e['image'] = rel; e['added'] = today; e.setdefault('created_at', now.strftime('%Y-%m-%dT%H:%M:%SZ')); db['entries'].append(e); have.add(e['id']); added += 1
-cut = now - dt.timedelta(days=7); keep = []
+cut = now - dt.timedelta(days=WINDOW_DAYS); keep = []
 for e in db['entries']:
     if P(e.get('created_at') or e['added'] + 'T12:00:00Z') < cut:
         p = os.path.join(R, e.get('image', ''))
         if e.get('image') and os.path.exists(p): os.remove(p)
         print('pruned', e['id'])
     else: keep.append(e)
-keep.sort(key=lambda e: e['id']); keep.sort(key=lambda e: e['added'], reverse=True)  # newest day first; j1,j2,m1..m3
+RANK = {'high': 0, 'medium': 1, 'light': 2}
+keep.sort(key=lambda e: (RANK.get(e.get('virality'), 3), e['id'])); keep.sort(key=lambda e: e['added'], reverse=True)  # newest day first; j1,j2,m1..m3
 db['entries'] = keep
-db['meta'] = {"generated_at": now.strftime('%Y-%m-%dT%H:%M:%SZ'), "latest_day": max([e['added'] for e in keep], default=today), "window_days": 7}
+db['meta'] = {"generated_at": now.strftime('%Y-%m-%dT%H:%M:%SZ'), "latest_day": max([e['added'] for e in keep], default=today), "window_days": WINDOW_DAYS}
 json.dump(db, open(DATA, 'w'), ensure_ascii=False, indent=1)
 print(f'added {added}, total {len(keep)}')
 if '--no-push' not in sys.argv:

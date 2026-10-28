@@ -3,6 +3,17 @@
 Every day: **2 JOKES + 3 MEMES**, all original, for @ForecastQuant (English). Nothing is posted to X.
 No source posts, handles, links or metrics are stored or shown.
 
+## 0. Goal & selection rules (X monetization: 5M organic impressions / 90 days)
+- Optimise for reposts, bookmarks, quote-posts and quality replies.
+- Prefer ideas relatable to ANY Bitcoin holder or newcomer; no inside jokes.
+- Prefer shapes that invite engagement: a joke ending in a relatable question, "which one are you?",
+  savable lists, tag-a-friend situations.
+- Draft more than 5 ideas, keep the 5 most shareable (still 2 JOKES + 3 MEMES), rank them.
+- Flag each: `virality` high|medium|light (honest judgement on relatability; no invented stats)
+  + `why_shareable` one line. update.py sorts by virality. News-dependent items usually rate lower.
+- Posting suggestion shown on page: best window 9:00-11:00 Chile time weekdays; weekends late morning.
+- Window: `WINDOW_DAYS = 7` at top of update.py.
+
 ## 1. Find the news hook (5 min)
 - X: `search_news` (query "bitcoin", max_age_hours 36) and `search_posts_all` for what people are joking about.
 - Web: WebSearch "bitcoin news <today>".
@@ -47,7 +58,7 @@ Never copy anyone's joke verbatim. Each item: `suggested_post` + a different `su
 ```json
 {"id":"YYYY-MM-DD-j1","type":"JOKE|MEME","format":"Drake Hotline Bling","timeliness":"EVERGREEN|CURRENT",
  "hook":"one line, verified fact + source (CURRENT only, else \"\")",
- "suggested_post":"...","suggested_alt":"...","image_src":"/abs/path.jpg","image_alt":"..."}
+ "suggested_post":"...","suggested_alt":"...","virality":"high|medium|light","why_shareable":"one line","image_src":"/abs/path.jpg","image_alt":"..."}
 ```
 ids: j1, j2, m1, m2, m3.
 
