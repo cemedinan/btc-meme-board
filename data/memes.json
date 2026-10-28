@@ -1,74 +1,74 @@
 {
- "meta": {
-  "generated_at": "2026-10-28T03:23:54Z",
-  "latest_day": "2026-10-28",
-  "window_days": 7
- },
- "entries": [
-  {
-   "id": "2026-10-28-j1",
-   "type": "JOKE",
-   "format": "brand card",
-   "timeliness": "CURRENT",
-   "hook": "Google Trends: 'bitcoin' search interest at a five-year low (X News, Oct 27)",
-   "suggested_post": "Google searches for Bitcoin just hit a five-year low.\n\nSo it's not just my family.",
-   "suggested_alt": "Bitcoin search interest is at a five-year low.\n\nFinally, the whole internet reacts to Bitcoin the way my group chat does.",
-   "image_alt": "Navy card: Bitcoin Google searches just hit a five-year low. So it's not just my family.",
-   "image": "images/2026-10-28-1.jpg",
-   "added": "2026-10-28",
-   "created_at": "2026-10-28T03:23:54Z"
+  "meta": {
+    "generated_at": "2026-10-28T03:35:09Z",
+    "latest_day": "2026-10-28",
+    "window_days": 7
   },
-  {
-   "id": "2026-10-28-j2",
-   "type": "JOKE",
-   "format": "brand card",
-   "timeliness": "EVERGREEN",
-   "hook": "",
-   "suggested_post": "Self-custody means nobody can touch my seed phrase.\n\nIt's on a sticky note. On the router.",
-   "suggested_alt": "Not your keys, not your coins.\n\nMy keys, also not my coins. I laminated the Wi-Fi password.",
-   "image_alt": "Navy card: Self-custody: nobody can touch my seed phrase. It's on a sticky note. On the router.",
-   "image": "images/2026-10-28-2.jpg",
-   "added": "2026-10-28",
-   "created_at": "2026-10-28T03:23:54Z"
-  },
-  {
-   "id": "2026-10-28-m1",
-   "type": "MEME",
-   "format": "Drake Hotline Bling",
-   "timeliness": "CURRENT",
-   "hook": "Fed FOMC rate decision is today, Oct 28",
-   "suggested_post": "Fed day.\n\nI will not be reading the statement. I will be watching a 1-minute candle have a nervous breakdown.",
-   "suggested_alt": "FOMC day: 400 words from the Fed, 4,000 candles from me.",
-   "image_alt": "Drake meme: rejects reading the Fed's rate decision, approves watching the 1-minute Bitcoin chart have a panic attack about it",
-   "image": "images/2026-10-28-3.jpg",
-   "added": "2026-10-28",
-   "created_at": "2026-10-28T03:23:54Z"
-  },
-  {
-   "id": "2026-10-28-m2",
-   "type": "MEME",
-   "format": "This Is Fine (dog in burning room)",
-   "timeliness": "EVERGREEN",
-   "hook": "",
-   "suggested_post": "Leverage is great. You get to experience a whole bear market in four minutes.",
-   "suggested_alt": "50x long. Room's on fire. Coffee's still warm. We're fine.",
-   "image_alt": "This is fine dog: Me, 4 minutes into my 50x long",
-   "image": "images/2026-10-28-4.jpg",
-   "added": "2026-10-28",
-   "created_at": "2026-10-28T03:23:54Z"
-  },
-  {
-   "id": "2026-10-28-m3",
-   "type": "MEME",
-   "format": "Waiting Skeleton (spooky-season trend)",
-   "timeliness": "CURRENT",
-   "hook": "Halloween week; spooky-season formats trending (TikTok trend reports, Oct 2026)",
-   "suggested_post": "Halloween costume this year: guy who was promised a post-halving bull run.\n\nNo makeup needed. Just waited.",
-   "suggested_alt": "Still waiting on the halving pump. At this point I'm not HODLing, I'm decomposing.",
-   "image_alt": "Waiting skeleton on a bench: Me waiting for the bull run I was promised last halving",
-   "image": "images/2026-10-28-5.jpg",
-   "added": "2026-10-28",
-   "created_at": "2026-10-28T03:23:54Z"
-  }
- ]
+  "entries": [
+    {
+      "id": "2026-10-28-j1",
+      "type": "JOKE",
+      "format": "brand card",
+      "timeliness": "CURRENT",
+      "hook": "Google Trends: 'bitcoin' search interest at a five-year low (X News, Oct 27)",
+      "suggested_post": "Google searches for Bitcoin just hit a five-year low.\n\nSo it's not just my family.",
+      "suggested_alt": "Bitcoin search interest is at a five-year low.\n\nFinally, the whole internet reacts to Bitcoin the way my group chat does.",
+      "image_alt": "Navy card: Bitcoin Google searches just hit a five-year low. So it's not just my family.",
+      "image": "images/2026-10-28-1.jpg",
+      "added": "2026-10-28",
+      "created_at": "2026-10-28T03:23:54Z"
+    },
+    {
+      "id": "2026-10-28-j2",
+      "type": "JOKE",
+      "format": "brand card",
+      "timeliness": "EVERGREEN",
+      "hook": "",
+      "suggested_post": "Self-custody means nobody can touch my seed phrase.\n\nIt's on a sticky note. On the router.",
+      "suggested_alt": "Not your keys, not your coins.\n\nMy keys, also not my coins. I laminated the Wi-Fi password.",
+      "image_alt": "Navy card: Self-custody: nobody can touch my seed phrase. It's on a sticky note. On the router.",
+      "image": "images/2026-10-28-2.jpg",
+      "added": "2026-10-28",
+      "created_at": "2026-10-28T03:23:54Z"
+    },
+    {
+      "id": "2026-10-28-m1",
+      "type": "MEME",
+      "format": "Drake Hotline Bling",
+      "timeliness": "CURRENT",
+      "hook": "Fed FOMC rate decision is today, Oct 28",
+      "suggested_post": "Fed day.\n\nI will not be reading the statement. I will be watching a 1-minute candle have a nervous breakdown.",
+      "suggested_alt": "FOMC day: 400 words from the Fed, 4,000 candles from me.",
+      "image_alt": "Drake meme: rejects reading the Fed's rate decision, approves watching the 1-minute Bitcoin chart have a panic attack about it",
+      "image": "images/2026-10-28-3.jpg",
+      "added": "2026-10-28",
+      "created_at": "2026-10-28T03:23:54Z"
+    },
+    {
+      "id": "2026-10-28-m2",
+      "type": "MEME",
+      "format": "This Is Fine (dog in burning room)",
+      "timeliness": "EVERGREEN",
+      "hook": "",
+      "suggested_post": "Leverage is great. You get to experience a whole bear market in four minutes.",
+      "suggested_alt": "50x long. Room's on fire. Coffee's still warm. We're fine.",
+      "image_alt": "This is fine dog: Me, 4 minutes into my 50x long",
+      "image": "images/2026-10-28-4.jpg",
+      "added": "2026-10-28",
+      "created_at": "2026-10-28T03:23:54Z"
+    },
+    {
+      "id": "2026-10-28-m3",
+      "type": "MEME",
+      "format": "Waiting Skeleton (spooky-season trend)",
+      "timeliness": "CURRENT",
+      "hook": "Halloween week; spooky-season formats trending (TikTok trend reports, Oct 2026)",
+      "suggested_post": "Halloween costume this year: guy who was promised a post-halving bull run.\n\nNo makeup needed. Just waited.",
+      "suggested_alt": "Still waiting on the halving pump. At this point I'm not HODLing, I'm decomposing.",
+      "image_alt": "Waiting skeleton on a bench: Me waiting for the bull run I was promised last halving",
+      "image": "images/2026-10-28-5.jpg",
+      "added": "2026-10-28",
+      "created_at": "2026-10-28T03:23:54Z"
+    }
+  ]
 }

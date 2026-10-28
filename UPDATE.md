@@ -61,3 +61,6 @@ their images, writes data/memes.json, commits and pushes.
 - After push (~1 min): HTTP 200 for https://cemedinan.github.io/btc-meme-board/, data/memes.json, every image.
 - `google-chrome --headless --no-sandbox --window-size=900,2400 --virtual-time-budget=8000 --screenshot=shot.png URL`
   and look at it.
+
+## Cache note
+Image links in index.html carry ?v=<meta.generated_at> so browsers fetch new images when a file is replaced under the same name. update.py refreshes generated_at on every run; if you re-render images without running update.py, bump meta.generated_at.
