@@ -1,27 +1,30 @@
 {
  "meta": {
-  "generated_at": "2026-10-28T02:54:14Z",
-  "latest_day": "2026-10-27",
+  "generated_at": "2026-10-28T03:12:29Z",
+  "latest_day": "2026-10-28",
   "window_days": 7
  },
  "entries": [
   {
-   "id": "2114289867488141345",
+   "id": "2115064836258222338",
    "username": "MandelDuck",
    "author": "MandelDuck",
-   "created_at": "2026-10-25T09:36:00Z",
-   "url": "https://x.com/MandelDuck/status/2114289867488141345",
-   "text": "Bitcoin Seinfeld: Bitcoiners at the airport part 4\nAnybody else got those post conference blues? (or conference fatigue?) [video]",
+   "created_at": "2026-10-27T12:55:00Z",
+   "url": "https://x.com/MandelDuck/status/2115064836258222338",
+   "text": "David Attenborough: Bitcoiners in the wild\n\nIn this film, we follow one of the most fascinating and least understood species on planet Earth… the Bitcoiner [video]",
    "metrics": {
-    "impression_count": 101440,
-    "like_count": 495,
-    "repost_count": 56,
-    "reply_count": 21
+    "impression_count": 66744,
+    "like_count": 999,
+    "repost_count": 235,
+    "reply_count": 67
    },
-   "suggested_post": "Post-conference blues are real.\n\nYesterday I was surrounded by bitcoiners.\nToday I'm at the gate and nobody wants to hear about Bitcoin.",
-   "image_alt": "Tired bitcoiner at an airport gate with conference swag",
-   "image": "images/2026-10-27-1.jpg",
-   "added": "2026-10-27"
+   "suggested_post": "The Bitcoiner is the only species that hibernates through the bear market and still checks the price every hour.",
+   "image_alt": "Rare species: the Bitcoiner, seen through binoculars",
+   "suggested_alt": "Scientists finally observed a Bitcoiner in the wild.\n\nIt approached slowly, made eye contact, and asked if they'd heard of self-custody.",
+   "laugh_replies": 10,
+   "laugh_note": "seen",
+   "image": "images/2026-10-28-1.jpg",
+   "added": "2026-10-28"
   },
   {
    "id": "2112857602564542754",
@@ -36,46 +39,55 @@
     "repost_count": 49,
     "reply_count": 23
    },
-   "suggested_post": "Airports are my favorite place to talk about Bitcoin.\n\nNobody can leave until boarding.",
-   "image_alt": "Two travelers in Bitcoin shirts nodding at each other in a security line",
-   "image": "images/2026-10-27-2.jpg",
-   "added": "2026-10-27"
+   "suggested_post": "Airport security asked if I had anything to declare.\n\nI said 21 million is a hard cap.\n\nI'm writing this from a small room.",
+   "image_alt": "Anything to declare? 21M. Hard cap.",
+   "suggested_alt": "Spotting another Bitcoiner at the airport is like meeting someone from your hometown.\n\nExcept your hometown is a group chat that won't stop yelling.",
+   "laugh_replies": 5,
+   "laugh_note": "seen",
+   "image": "images/2026-10-28-2.jpg",
+   "added": "2026-10-28"
   },
   {
-   "id": "2115064836258222338",
+   "id": "2114289867488141345",
    "username": "MandelDuck",
    "author": "MandelDuck",
-   "created_at": "2026-10-27T12:55:00Z",
-   "url": "https://x.com/MandelDuck/status/2115064836258222338",
-   "text": "David Attenborough: Bitcoiners in the wild\n\nIn this film, we follow one of the most fascinating and least understood species on planet Earth… the Bitcoiner [video]",
+   "created_at": "2026-10-25T09:36:00Z",
+   "url": "https://x.com/MandelDuck/status/2114289867488141345",
+   "text": "Bitcoin Seinfeld: Bitcoiners at the airport part 4\nAnybody else got those post conference blues? (or conference fatigue?) [video]",
    "metrics": {
-    "impression_count": 66744,
-    "like_count": 999,
-    "repost_count": 235,
-    "reply_count": 67
+    "impression_count": 101440,
+    "like_count": 495,
+    "repost_count": 56,
+    "reply_count": 21
    },
-   "suggested_post": "Nature documentary idea: the Bitcoiner.\n\nOne of the least understood species on Earth.\nIf you get too close, it starts explaining money.",
-   "image_alt": "Bitcoiner hiding in a bush checking a chart, watched through binoculars",
-   "image": "images/2026-10-27-3.jpg",
-   "added": "2026-10-27"
+   "suggested_post": "Post-conference blues is going from a room where everyone agrees with you to a dinner table where you're the cautionary tale.",
+   "image_alt": "Conference over. Back to normies.",
+   "suggested_alt": "Worst part of a Bitcoin conference is flying home and remembering normal people think \"self-custody\" is a parenting term.",
+   "laugh_replies": 4,
+   "laugh_note": "seen",
+   "image": "images/2026-10-28-3.jpg",
+   "added": "2026-10-28"
   },
   {
-   "id": "2114455702102286646",
-   "username": "sunxliao",
-   "author": "sunxliao",
-   "created_at": "2026-10-25T20:34:00Z",
-   "url": "https://x.com/sunxliao/status/2114455702102286646",
-   "text": "2014: Massive Bear Market (Buy)\n2015: Relax\n2016: Relax\n2017: Sell and Buy Porsche\n2018: Massive Bear Market (Buy)\n2019: Relax\n2020: Relax\n2021: Sell and Buy Porsche\n2022: Massive Bear Market (Buy)\n2023: …",
+   "id": "2114381469573366148",
+   "username": "pete_rizzo_",
+   "author": "pete_rizzo_",
+   "created_at": "2026-10-25T15:40:00Z",
+   "url": "https://x.com/pete_rizzo_/status/2114381469573366148",
+   "text": "13 YEARS OF \"EXPERTS\" SAYING #BITCOIN IS GOING TO $0\n\nTHEY NEVER LEARN 🤣 [video]",
    "metrics": {
-    "impression_count": 57110,
-    "like_count": 541,
-    "repost_count": 40,
-    "reply_count": 24
+    "impression_count": 16313,
+    "like_count": 286,
+    "repost_count": 58,
+    "reply_count": 29
    },
-   "suggested_post": "The Bitcoin playbook, as a meme:\n\nBear market: buy\nNext year: relax\nYear after: relax\nThen: sell and buy a Porsche\n\nSimple on paper. Hard in real life.",
-   "image_alt": "Four panels: buy in the rain, relax, relax, drive a sports car",
-   "image": "images/2026-10-27-4.jpg",
-   "added": "2026-10-27"
+   "suggested_post": "Experts have called Bitcoin going to zero for 13 years.\n\nAt this point it's not a prediction. It's a holiday tradition.",
+   "suggested_alt": "Bitcoin has died so many times it should be a horror franchise.\n\nEvery sequel, same ending. The experts never survive.",
+   "image_alt": "Declared dead again. Still here.",
+   "laugh_replies": 2,
+   "laugh_note": "seen",
+   "image": "images/2026-10-28-4.jpg",
+   "added": "2026-10-28"
   },
   {
    "id": "2114155260742652123",
@@ -90,10 +102,13 @@
     "repost_count": 2,
     "reply_count": 5
    },
-   "suggested_post": "Leverage trading plan:\n\nHit your stop loss. Try again.\nHit it again. Try again.\nBlow the account. Deposit again.\n\nOr just buy spot and go to sleep.",
-   "image_alt": "Trader pressing a Deposit Again button in front of a falling chart",
-   "image": "images/2026-10-27-5.jpg",
-   "added": "2026-10-27"
+   "suggested_post": "My leverage strategy has three steps:\n\nOpen position. Hit stop loss. Deposit again.\n\nMy exchange calls me a loyal customer.",
+   "image_alt": "Stop loss. Deposit. Repeat.",
+   "suggested_alt": "Leverage traders don't have a strategy.\n\nThey have a subscription. Monthly deposit. Cancel anytime. Never do.",
+   "laugh_replies": 2,
+   "laugh_note": "seen",
+   "image": "images/2026-10-28-5.jpg",
+   "added": "2026-10-28"
   }
  ]
 }

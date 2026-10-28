@@ -1,13 +1,12 @@
 <!doctype html>
-<html lang="en" data-theme="day">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#ffffff" />
+<meta name="theme-color" content="#0B0B2B" />
 <title>BTC Meme Board · @ForecastQuant</title>
 <style>
-:root,html[data-theme="day"]{--bg:#fff;--fg:#1B7F1B;--fg2:#4C9A4C;--acc:#3366CC;--line:#d6d6d6;--hover:#f3f8f3}
-html[data-theme="night"]{--bg:#000;--fg:#33FF66;--fg2:#22AA44;--acc:#5C9DFF;--line:#1f3a1f;--hover:#061a06}
+:root{--bg:#0B0B2B;--fg:#F2F2F5;--fg2:#9C9CC0;--acc:#C5E523;--line:#25255A;--hover:#15153F}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--fg)}
 body{font:15px/1.55 ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono","Courier New",monospace;-webkit-text-size-adjust:100%}
@@ -38,6 +37,7 @@ main{max-width:860px;margin:0 auto;padding:14px 18px 60px}
 .acts button,.acts a{color:var(--acc)}
 .acts button.copied{color:var(--fg)}
 .img{display:block;width:100%;height:auto;border:1px solid var(--line);margin:10px 0}
+.laugh{color:var(--acc)}
 .day{color:var(--fg);margin:22px 0 4px}
 @media(max-width:560px){body{font-size:14px}.title{font-size:18px}.bar{padding:12px}main{padding:10px 12px 48px}.tools{gap:12px}.hide-sm{display:none}}
 </style>
@@ -48,15 +48,14 @@ main{max-width:860px;margin:0 auto;padding:14px 18px 60px}
   <div class="tools">
     <button type="button" id="xvs-refresh-btn" title="Refresh"><svg class="ico" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="hide-sm">refresh</span></button>
     <span class="tag">#memes</span>
-    <button type="button" id="theme-toggle" title="Theme"><svg class="ico" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><span id="theme-label">day</span></button>
   </div>
 </header>
 <main>
-  <p class="sys strong">* BTC Meme Board · top 5 Bitcoin jokes &amp; memes on X, picked daily for @ForecastQuant *</p>
+  <p class="sys strong">* BTC Meme Board · top Bitcoin jokes &amp; memes on X with 😂 replies, picked daily for @ForecastQuant *</p>
   <p class="sys" id="meta">* loading… *</p>
   <nav class="nav"><button type="button" data-f="today">#today_top5</button><button type="button" data-f="all">#last_7_days</button></nav>
   <section id="memes"></section>
-  <p class="sys" style="margin-top:24px">* read-only: nothing is posted to X · images are original recreations, not the authors' media · suggested posts are drafts to adapt *</p>
+  <p class="sys" style="margin-top:24px">* read-only: nothing is posted to X · images are original recreations, not the authors' media · suggested posts are original drafts · 😂 counts are replies seen via X search (a sample, not a full count) *</p>
 </main>
 <script>
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
@@ -64,14 +63,13 @@ function fmt(n){n=Number(n)||0;return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e
 async function copyDraft(btn,text){try{await navigator.clipboard.writeText(text)}catch(e){const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove()}const p=btn.textContent;btn.textContent='[copied]';btn.classList.add('copied');setTimeout(()=>{btn.textContent=p;btn.classList.remove('copied')},1400)}
 const tz={timeZone:'America/Santiago'};let D,F='today';
 function card(p,i){const m=p.metrics||{};const d=new Date(p.created_at).toLocaleString('en-US',{...tz,dateStyle:'medium',timeStyle:'short'});
-return`<article class="post"><div class="meta">#${i+1} · <span class="who"><span class="h">@${esc(p.username)}</span></span> · ${esc(d)}</div><div class="meta">${m.impression_count!=null?fmt(m.impression_count)+' views · ':''}♥ ${fmt(m.like_count)} · ↻ ${fmt(m.repost_count)} · ↩ ${fmt(m.reply_count)}</div><div class="text">${esc(p.text)}</div><img class="img" loading="lazy" src="./${esc(p.image)}" alt="${esc(p.image_alt||'meme')}"><div class="reply"><div class="lbl">suggested post/en</div><pre id="s-${p.id}">${esc(p.suggested_post)}</pre></div><div class="acts"><button type="button" class="cp" data-id="s-${p.id}">[COPY POST]</button><a href="./${esc(p.image)}" download>[image ↓]</a><a href="${esc(p.url)}" target="_blank" rel="noopener">[open post ↗]</a></div></article>`}
+return`<article class="post"><div class="meta">#${i+1} · <span class="who"><span class="h">@${esc(p.username)}</span></span> · ${esc(d)}</div><div class="meta">${m.impression_count!=null?fmt(m.impression_count)+' views · ':''}♥ ${fmt(m.like_count)} · ↻ ${fmt(m.repost_count)} · ↩ ${fmt(m.reply_count)}${p.laugh_replies!=null?` · <span class="laugh">😂 replies: ${p.laugh_replies} ${esc(p.laugh_note||'')}</span>`:''}</div><div class="text">${esc(p.text)}</div><img class="img" loading="lazy" src="./${esc(p.image)}" alt="${esc(p.image_alt||'meme')}"><div class="reply"><div class="lbl">suggested post/en</div><pre id="s-${p.id}">${esc(p.suggested_post)}</pre></div>${p.suggested_alt?`<div class="reply"><div class="lbl">alt version/en</div><pre id="a-${p.id}">${esc(p.suggested_alt)}</pre></div>`:''}<div class="acts"><button type="button" class="cp" data-id="s-${p.id}">[COPY POST]</button>${p.suggested_alt?`<button type="button" class="cp" data-id="a-${p.id}">[COPY ALT]</button>`:''}<a href="./${esc(p.image)}" download>[image ↓]</a><a href="${esc(p.url)}" target="_blank" rel="noopener">[open post ↗]</a></div></article>`}
 function render(){const L=D.meta.latest_day;const t=D.entries.filter(e=>e.added===L),o=D.entries.filter(e=>e.added!==L);let h='';
 if(F==='today'){h=t.map(card).join('')||'<p class="sys">* nothing today yet *</p>'}else{const days=[...new Set(D.entries.map(e=>e.added))];h=days.map(dy=>`<p class="day">## ${esc(dy)}</p>`+D.entries.filter(e=>e.added===dy).map(card).join('')).join('')}
 document.getElementById('memes').innerHTML=h;document.querySelectorAll('.cp').forEach(b=>b.addEventListener('click',()=>copyDraft(b,document.getElementById(b.dataset.id).textContent)));document.querySelectorAll('[data-f]').forEach(b=>b.classList.toggle('on',b.dataset.f===F))}
 (async()=>{const r=await fetch('./data/memes.json?ts='+Date.now());D=await r.json();const up=new Date(D.meta.generated_at).toLocaleString('en-US',tz);
 document.getElementById('meta').textContent=`* last update: ${up} (Chile) · ${D.entries.length} memes from the last 7 days *`;
 document.querySelectorAll('[data-f]').forEach(b=>b.addEventListener('click',()=>{F=b.dataset.f;render()}));render()})();
-(()=>{const h=document.documentElement,K='memesTheme';const set=t=>{h.dataset.theme=t;document.getElementById('theme-label').textContent=t;document.querySelector('meta[name=theme-color]').content=t==='day'?'#ffffff':'#000000'};let t='day';try{const v=localStorage.getItem(K);if(v==='night'||v==='day')t=v}catch(e){}set(t);document.getElementById('theme-toggle').addEventListener('click',()=>{const n=h.dataset.theme==='night'?'day':'night';set(n);try{localStorage.setItem(K,n)}catch(e){}})})();
 document.getElementById('xvs-refresh-btn').addEventListener('click',function(){const u=new URL(location.href);u.searchParams.set('r',Date.now());location.replace(u.toString())});
 </script>
 </body></html>

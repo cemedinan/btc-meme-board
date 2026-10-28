@@ -15,6 +15,7 @@ def P(s): return dt.datetime.fromisoformat(s.replace('Z', '+00:00'))
 db = json.load(open(DATA)) if os.path.exists(DATA) else {"meta": {}, "entries": []}
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 added = 0
+os.makedirs(os.path.join(R, 'images'), exist_ok=True)
 if args:
     have = {e['id'] for e in db['entries']}
     n = 0
@@ -33,7 +34,7 @@ for e in db['entries']:
         if e.get('image') and os.path.exists(p): os.remove(p)
         print('pruned', e['id'])
     else: keep.append(e)
-db['entries'] = sorted(keep, key=lambda e: (e['added'], e['metrics'].get('impression_count', 0)), reverse=True)
+db['entries'] = sorted(keep, key=lambda e: (e['added'], e.get('laugh_replies', 0), e['metrics'].get('impression_count', 0)), reverse=True)
 db['meta'] = {"generated_at": now.strftime('%Y-%m-%dT%H:%M:%SZ'), "latest_day": max([e['added'] for e in keep], default=today), "window_days": 7}
 json.dump(db, open(DATA, 'w'), ensure_ascii=False, indent=1)
 print(f'added {added}, total {len(keep)}')

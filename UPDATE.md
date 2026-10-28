@@ -1,24 +1,35 @@
 # Daily update procedure
 
 Live: https://cemedinan.github.io/btc-meme-board/ · Repo: https://github.com/cemedinan/btc-meme-board (Pages: legacy, branch `main`, path `/`).
-The page (`index.html`) is static and renders `data/memes.json` client-side, same theme as `x-virality-board`. Do not edit HTML for daily updates.
+The page (`index.html`) is static and renders `data/memes.json` client-side, same layout as `x-virality-board`, restyled navy/white/lime. Do not edit HTML for daily updates.
 
-## 1. Find 5 new memes (manual / agent step)
-- Use the X search tool (`x` → `search_posts_all`) with `start_time` = now − 7 days, `post.fields=public_metrics,created_at,author_id`, `expansions=author_id`, `user.fields=username`, `sort_order=relevancy`.
-- Useful queries: Bitcoin comedy accounts (`from:MandelDuck OR from:sunxliao ...`), humor keywords (`(bitcoin OR btc) (meme OR lol OR 😂) lang:en -is:retweet -is:reply`), timely jokes (Halloween, Thanksgiving, "Bitcoin is dead", leverage, HODL).
-- Keep only real humor/memes about Bitcoin (no news, shilling, giveaways, token promos). Prefer English. Rank by impressions, else likes+reposts+replies.
-- Skip ids already in `data/memes.json` (the script also skips them).
+## 1. Find candidates and check 😂 replies (agent step)
+- Search candidates with `x` → `search_posts_all` (`start_time` = now − 7 days, `post.fields=public_metrics,created_at`, `expansions=author_id`, `user.fields=username`, `sort_order=relevancy`). Good sources: Bitcoin comedy accounts (`from:MandelDuck OR from:pete_rizzo_ OR from:CryptoWendyO OR from:sunxliao ...`), humor keywords (`(bitcoin OR btc) (meme OR lol OR 😂) lang:en -is:retweet -is:reply`).
+- Keep only real humor/memes about Bitcoin in English (no news, shilling, giveaways, token promos).
+- **Qualifying rule:** the post must have at least one reply containing 😂. Check with one batched search:
+  `(conversation_id:ID1 OR conversation_id:ID2 ...) 😂 is:reply`, `post.fields=referenced_tweets`, follow `next_token`.
+  Count replies whose text has 😂 and whose `referenced_tweets[replied_to].id` is the candidate (`conversation_id` is not returned, so this counts direct replies only).
+- Rank by 😂 replies seen, then impressions. Take the top 5; if fewer than 5 qualify, publish only those and say so in the report.
+- Store `laugh_replies` (int) and `laugh_note: "seen"` (it is a sample count from search).
 
-## 2. Create 5 images
-- GenerateImage, 16:9, flat cartoon, white background with green #1B7F1B / blue #3366CC accents, one short monospace caption. Original concept recreation; never re-host the author's media; no real people. Check each image visually.
+## 2. Suggested posts: comedian voice, 2 versions
+Write as the best stand-up comedian in the world, for a Bitcoin audience, in English:
+premise → twist → kicker. Sharp, sarcastic, original, few words. Same joke territory as the source, but clearly better wording; never copy verbatim.
+No invented facts, no claims about video/image contents you cannot see (for video posts write an independent joke on the theme), no hashtag spam, no motivational fluff, no price predictions or financial advice, no real people's likenesses.
+Provide `suggested_post` (primary) and `suggested_alt` (alternative); each gets its own copy button.
 
-## 3. Write incoming JSON
+## 3. Images: navy / white / lime art direction
+Square 1080×1080 JPG. Deep navy background #0B0B2B, accents only white #F2F2F5 and lime #C5E523 plus navy tints (#1C1C48, #303064). Flat, minimal, bold geometric/editorial, lots of negative space, high contrast. Short punchline: white line + lime highlight line. Small chevron-up mark (lime over white) top right. No multicolor, no gradients, no photoreal people.
+Preferred (exact control): `python3 render_card.py out.jpg "WHITE LINE" "LIME LINE" <motif>` (motifs: binoculars, plane, ticket, tombstone, loop, none; add new motifs in the script as needed). If using GenerateImage instead, spell out this palette strictly and Read every image; regenerate any that stray.
+
+## 3b. Incoming JSON
 Create e.g. `/workspace/btc-incoming/YYYY-MM-DD.json` — a list of objects:
 ```json
 {"id":"…","username":"handle","author":"handle","created_at":"2026-10-25T09:36:00Z",
  "url":"https://x.com/handle/status/…","text":"joke text","metrics":{"impression_count":0,"like_count":0,"repost_count":0,"reply_count":0},
- "suggested_post":"close paraphrase in @ForecastQuant's voice: direct, simple, one idea, English, no hashtag spam, no new facts",
- "image_src":"/path/to/generated.jpg","image_alt":"short description"}
+ "laugh_replies":3,"laugh_note":"seen",
+ "suggested_post":"primary","suggested_alt":"alternative",
+ "image_src":"/path/to/card.jpg","image_alt":"short description"}
 ```
 
 ## 4. Run the script
