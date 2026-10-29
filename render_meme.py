@@ -49,5 +49,14 @@ def drake(tpl,out,a,b):
     for i,txt in enumerate((a,b)):
         d.rectangle([500,i*500,1000,i*500+500],fill=WHITE); draw_block(d,(530,i*500+30,970,i*500+(470 if i==0 else 350)),txt,start=72)  # keep watermark corner clear
     finish(t,out)
+def panels(tpl,out,*texts):
+    """N equal rows, text in a white box on the LEFT half (Expanding Brain style).
+    python3 render_meme.py panels tpl.jpg out.jpg "ROW1" "ROW2" ..."""
+    t=Image.open(tpl).convert('RGB'); W=1000; t=t.resize((W,int(t.height*W/t.width)),Image.LANCZOS); d=ImageDraw.Draw(t)
+    n=len(texts); rh=t.height/n
+    for i,txt in enumerate(texts):
+        y0=int(i*rh); y1=int((i+1)*rh); d.rectangle([0,y0+2,W//2-4,y1-2],fill=WHITE)
+        draw_block(d,(20,y0+15,W//2-24,y1-15),txt,start=64)
+    finish(t,out)
 if __name__=='__main__':
-    m=sys.argv[1]; {'band':band,'drake':drake}[m](*sys.argv[2:])
+    m=sys.argv[1]; {'band':band,'drake':drake,'panels':panels}[m](*sys.argv[2:])
