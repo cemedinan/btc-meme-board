@@ -88,3 +88,8 @@ their images, writes data/memes.json, commits and pushes.
 
 ## Cache note
 Image links in index.html carry ?v=<meta.generated_at> so browsers fetch new images when a file is replaced under the same name. update.py refreshes generated_at on every run; if you re-render images without running update.py, bump meta.generated_at.
+
+## Card buttons (since Oct 29)
+Each card: **POST ON X** (x.com/intent/post with suggested_post + blank line + CTA if ≤280 chars, else post only + note),
+**POST ALT ON X** (suggested_alt), small [copy] fallback, and [image ↓]. Intents can't attach images: the user downloads
+and attaches the image in X, then sends. Text is encoded with encodeURIComponent. On iOS it tries the X app first (same as Venn's forecastquant-posts page). Nothing is auto-posted.
