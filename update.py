@@ -28,7 +28,7 @@ if args:
         if e['id'] in have: print('skip existing', e['id']); continue
         n += 1
         while os.path.exists(os.path.join(R, 'images', f'{today}-{TAG}{n}.jpg')): n += 1
-        rel = f'images/{today}-{n}.jpg'
+        rel = f'images/{today}-{TAG}{n}.jpg'
         im = Image.open(e.pop('image_src')).convert('RGB'); im.thumbnail((1200, 1200))
         im.save(os.path.join(R, rel), 'JPEG', quality=82, optimize=True, progressive=True)
         e['image'] = rel; e['added'] = today; e.setdefault('created_at', now.strftime('%Y-%m-%dT%H:%M:%SZ')); db['entries'].append(e); have.add(e['id']); added += 1
