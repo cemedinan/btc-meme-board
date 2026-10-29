@@ -22,9 +22,9 @@ def wrap_fit(d,text,w,h,start=80):
     s=start
     while s>18:
         f=font(s); cpl=max(6,int(w/(s*0.5)))
-        lines=textwrap.wrap(text,cpl)
+        lines=textwrap.wrap(text,cpl,break_long_words=False)
         while lines and max(d.textlength(l,font=f) for l in lines)>w and cpl>6:
-            cpl-=1; lines=textwrap.wrap(text,cpl)
+            cpl-=1; lines=textwrap.wrap(text,cpl,break_long_words=False)
         th=len(lines)*s*1.15
         if th<=h and max(d.textlength(l,font=f) for l in lines)<=w: return f,lines,s
         s-=3
@@ -58,5 +58,23 @@ def panels(tpl,out,*texts):
         y0=int(i*rh); y1=int((i+1)*rh); d.rectangle([0,y0+2,W//2-4,y1-2],fill=WHITE)
         draw_block(d,(20,y0+15,W//2-24,y1-15),txt,start=64)
     finish(t,out)
+def labels(tpl,out,top,boxes,box_bg=True):
+    """Labels at template pixel boxes (template's ORIGINAL coordinates) + optional top caption band.
+    Python use: labels('t.jpg','o.jpg','TOP or ""',[((x0,y0,x1,y1),'text'),...], box_bg=True)
+    box_bg=True: white rounded box behind text; False: white text with black outline (classic meme)."""
+    t=Image.open(tpl).convert('RGB'); k=1000/t.width
+    t=t.resize((1000,round(t.height*k)),Image.LANCZOS); d=ImageDraw.Draw(t)
+    for b,txt in boxes:
+        x0,y0,x1,y1=[round(v*k) for v in b]
+        if box_bg:
+            d.rounded_rectangle((x0,y0,x1,y1),radius=12,fill=WHITE,outline=BLACK,width=3)
+            draw_block(d,(x0+8,y0+6,x1-8,y1-6),txt,start=60)
+        else:
+            f,lines,s=wrap_fit(d,txt,x1-x0,y1-y0,64); y=(y0+y1)/2-len(lines)*s*1.15/2
+            for l in lines: d.text(((x0+x1)/2,y),l,font=f,fill=WHITE,anchor='ma',stroke_width=max(2,s//12),stroke_fill=BLACK); y+=s*1.15
+    tmp=out+'.tmp.jpg'; t.save(tmp,quality=95)
+    if top: band(tmp,out,top)
+    else: finish(t,out)
+    os.remove(tmp)
 if __name__=='__main__':
     m=sys.argv[1]; {'band':band,'drake':drake,'panels':panels}[m](*sys.argv[2:])

@@ -19,6 +19,7 @@ args = [a for a in sys.argv[1:] if not a.startswith('--')]
 added = 0
 for a in sys.argv:
     if a.startswith('--day='): today = a[6:]
+TAG = next((a[6:] + '-' for a in sys.argv if a.startswith('--tag=')), '')  # e.g. --tag=v1 -> DATE-v1-N.jpg
 os.makedirs(os.path.join(R, 'images'), exist_ok=True)
 if args:
     have = {e['id'] for e in db['entries']}
@@ -26,7 +27,7 @@ if args:
     for e in json.load(open(args[0])):
         if e['id'] in have: print('skip existing', e['id']); continue
         n += 1
-        while os.path.exists(os.path.join(R, 'images', f'{today}-{n}.jpg')): n += 1
+        while os.path.exists(os.path.join(R, 'images', f'{today}-{TAG}{n}.jpg')): n += 1
         rel = f'images/{today}-{n}.jpg'
         im = Image.open(e.pop('image_src')).convert('RGB'); im.thumbnail((1200, 1200))
         im.save(os.path.join(R, rel), 'JPEG', quality=82, optimize=True, progressive=True)

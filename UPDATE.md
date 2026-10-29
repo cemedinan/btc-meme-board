@@ -1,6 +1,6 @@
 # Daily update — BTC Meme Board (original content)
 
-Every day: **2 JOKES + 3 MEMES**, all original, for @ForecastQuant (English). Nothing is posted to X.
+Every day: **ONLY 5 IMAGE MEMES** (no text joke cards, rule since Oct 29), all original, for @ForecastQuant (English). Nothing is posted to X.
 No source posts, handles, links or metrics are stored or shown.
 
 ## 0. Goal & selection rules (X monetization: 5M organic impressions / 90 days)
@@ -8,7 +8,7 @@ No source posts, handles, links or metrics are stored or shown.
 - Prefer ideas relatable to ANY Bitcoin holder or newcomer; no inside jokes.
 - Prefer shapes that invite engagement: a joke ending in a relatable question, "which one are you?",
   savable lists, tag-a-friend situations.
-- Draft more than 5 ideas, keep the 5 most shareable (still 2 JOKES + 3 MEMES), rank them.
+- Draft more than 5 ideas, keep the 5 most shareable (5 MEMES), rank them.
 - Flag each: `virality` high|medium|light (honest judgement on relatability; no invented stats)
   + `why_shareable` one line. update.py sorts by virality. News-dependent items usually rate lower.
 - Posting suggestion shown on page: best window 9:00-11:00 Chile time weekdays; weekends late morning.
@@ -60,19 +60,20 @@ Never copy anyone's joke verbatim. Each item: `suggested_post` + a different `su
   automatically when the area behind is busy/bright. Keep captions out of the bottom-right corner.
 
 ## 5b. Art direction
-- Jokes: `python3 render_joke.py out.jpg "SETUP" "PUNCHLINE"` — navy #0B0B2B, white #F2F2F5 setup,
+- (Retired Oct 29: no joke cards. render_joke.py kept only for reference.) Jokes were: `python3 render_joke.py out.jpg "SETUP" "PUNCHLINE"` — navy #0B0B2B, white #F2F2F5 setup,
   big lime #C5E523 punchline, logo watermark. Flat, minimal, nothing else.
 - Memes: NOT minimal. `python3 render_meme.py band tpl.jpg out.jpg "TOP" ["BOTTOM"]` (caption band)
   or `python3 render_meme.py drake tpl.jpg out.jpg "NO" "YES"`. Output is framed in navy with the logo watermark.
 
 ## 6. Entry format (incoming.json, list of 5)
 ```json
-{"id":"YYYY-MM-DD-j1","type":"JOKE|MEME","format":"Drake Hotline Bling","timeliness":"EVERGREEN|CURRENT",
+{"id":"YYYY-MM-DD-m1","type":"MEME","format":"Drake Hotline Bling","timeliness":"EVERGREEN|CURRENT",
  "hook":"one line, verified fact + source (CURRENT only, else \"\")",
  "suggested_post":"...","suggested_alt":"...","virality":"high|medium|light","why_shareable":"one line","cta":"one line",
  "visual_suggestion":{"type":"short video 9:16","description":"...","style_note":"...","handoff":"hand off to Spielberg"},"image_src":"/abs/path.jpg","image_alt":"..."}
 ```
-ids: j1, j2, m1, m2, m3.
+ids: m1..m5. type is always MEME. Run with `--tag=v1` for DATE-v1-N.jpg filenames.
+`render_meme.py labels` (Python API) places text on template pixel boxes (Gru, Doge, Distracted Boyfriend...).
 
 ## 7. Run
 `python3 update.py incoming.json` (add `--no-push` to test, `--day=YYYY-MM-DD` to override).
